@@ -19,7 +19,9 @@
   ],
   "scripts": {
     "build": "rollup -c && tsc -p tsconfig.json --emitDeclarationOnly",
-    "prepublishOnly": "npm run build"
+    "prepublishOnly": "npm run build",
+    "release": "standard-version",
+    "postrelease": "git push --follow-tags origin main"
   },
   "repository": {
     "type": "git",
@@ -35,6 +37,7 @@
   "devDependencies": {
     "@rollup/plugin-typescript": "^11.1.6",
     "rollup": "^4.22.4",
+    "standard-version": "^9.5.0",
     "tslib": "^2.7.0",
     "typescript": "^5.5.4"
   }
