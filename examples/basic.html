@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>EmdcBridge Example</title>
+  </head>
+  <body>
+    <h1>EmdcBridge Example</h1>
+    <pre id="log"></pre>
+
+    <script type="module">
+      import bridge from "../dist/index.esm.js";
+
+      const logEl = document.getElementById("log");
+      const log = (msg) => {
+        logEl.textContent += msg + "\n";
+      };
+
+      try {
+        bridge.saveInfo({
+          type: "saveInfo",
+          data: { name: "Alice" }
+        });
+        log("saveInfo sent");
+
+        const info = bridge.getInfo();
+        log("getInfo: " + JSON.stringify(info));
+
+        const device = bridge.getDeviceInfo();
+        log("getDeviceInfo: " + JSON.stringify(device));
+      } catch (err) {
+        log("error: " + err.message);
+      }
+
+      bridge.on("deviceEvent", (data) => {
+        log("deviceEvent: " + JSON.stringify(data));
+      });
+
+      // Android pushes:
+      // window.EmdcBridgeWeb.callback({ type: "deviceEvent", data: { ... } })
+    </script>
+  </body>
+</html>

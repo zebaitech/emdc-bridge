@@ -1,0 +1,41 @@
+{
+  "name": "@jonce/emdc-bridge",
+  "version": "0.1.0",
+  "description": "EmdcBridge JS wrapper for Web-Android communication",
+  "type": "module",
+  "main": "dist/index.cjs",
+  "module": "dist/index.esm.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.esm.js",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "rollup -c && tsc -p tsconfig.json --emitDeclarationOnly",
+    "prepublishOnly": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "keywords": [
+    "jsbridge",
+    "android",
+    "webview",
+    "emdc"
+  ],
+  "license": "MIT",
+  "devDependencies": {
+    "@rollup/plugin-typescript": "^11.1.6",
+    "rollup": "^4.22.4",
+    "tslib": "^2.7.0",
+    "typescript": "^5.5.4"
+  }
+}
