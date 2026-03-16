@@ -26,12 +26,12 @@ bridge.clearItem("profile");
 const device = bridge.getDeviceInfo();
 
 // Listen to Android events
-bridge.on("deviceEvent", (data) => {
-  console.log("deviceEvent", data);
+bridge.on("event", (data) => {
+  console.log("event", data);
 });
 
 // Android pushes:
-// window.EmdcBridgeWeb.callback({ type: "deviceEvent", data: { ... } })
+// window.EmdcBridgeWeb.callback({ type: "event", data: { ... } })
 ```
 
 ## Advanced: request/response (optional)
