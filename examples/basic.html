@@ -27,6 +27,9 @@
         const info = bridge.getItem("profile");
         log("getItem: " + JSON.stringify(info));
 
+        bridge.clearItem("profile");
+        log("clearItem sent");
+
         const device = bridge.getDeviceInfo();
         log("getDeviceInfo: " + JSON.stringify(device));
       } catch (err) {

@@ -10,6 +10,9 @@ bridge.setItem({
 const info = bridge.getItem("profile");
 console.log("getInfo", info);
 
+// Clear item by key
+bridge.clearItem("profile");
+
 // Device info
 const device = bridge.getDeviceInfo();
 console.log("getDeviceInfo", device);
