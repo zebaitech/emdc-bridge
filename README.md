@@ -13,9 +13,9 @@ npm i @jonce/emdc-bridge
 ```ts
 import bridge from "@jonce/emdc-bridge";
 
-// Save info
-bridge.saveInfo({
-  type: "saveInfo",
+// Set info
+bridge.setInfo({
+  type: "setInfo",
   data: { name: "Alice" }
 });
 
@@ -44,7 +44,7 @@ bridge.request("getInfo", { type: "getInfo", data: {} })
 
 ## API
 
-- `bridge.saveInfo(payload)`
+- `bridge.setInfo(payload)`
 - `bridge.getInfo()`
 - `bridge.getDeviceInfo()`
 - `bridge.isAndroidAvailable()`

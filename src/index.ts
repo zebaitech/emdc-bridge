@@ -18,7 +18,7 @@ export interface BridgeOptions {
 export type BridgeHandler = (data: unknown, raw: BridgePayload) => void;
 
 interface EmdcBridgeAndroid {
-  saveInfo: (payload?: string | AnyObject) => unknown;
+  setInfo: (payload?: string | AnyObject) => unknown;
   getInfo: () => unknown;
   getDeviceInfo: () => unknown;
 }
@@ -157,9 +157,9 @@ export class EmdcBridgeCore {
     });
   }
 
-  saveInfo(payload: unknown) {
-    const normalized = normalizePayload(payload, "saveInfo");
-    return this.callAndroid("saveInfo", normalized);
+  setInfo(payload: unknown) {
+    const normalized = normalizePayload(payload, "setInfo");
+    return this.callAndroid("setInfo", normalized);
   }
 
   getInfo() {

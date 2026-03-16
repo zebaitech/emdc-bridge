@@ -18,11 +18,11 @@
       };
 
       try {
-        bridge.saveInfo({
-          type: "saveInfo",
+        bridge.setInfo({
+          type: "setInfo",
           data: { name: "Alice" }
         });
-        log("saveInfo sent");
+        log("setInfo sent");
 
         const info = bridge.getInfo();
         log("getInfo: " + JSON.stringify(info));

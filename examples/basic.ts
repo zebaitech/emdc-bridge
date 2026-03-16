@@ -1,8 +1,8 @@
 import bridge from "@jonce/emdc-bridge";
 
-// Save info
-bridge.saveInfo({
-  type: "saveInfo",
+// Set info
+bridge.setInfo({
+  type: "setInfo",
   data: { name: "Alice" }
 });
 
