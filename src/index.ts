@@ -18,9 +18,9 @@ export interface BridgeOptions {
 export type BridgeHandler = (data: unknown, raw: BridgePayload) => void;
 
 interface EmdcBridgeAndroid {
-  setItem: (payload: { key: string; data?: string | AnyObject }) => void;
-  getItem: (key: string) => unknown;
-  clearItem: (key: string) => void;  // 清除对应的数据
+  setItem: (payload?: string | AnyObject) => unknown;
+  getItem: (payload?: string | AnyObject) => unknown;
+  clearItem: (payload?: string | AnyObject) => unknown;
   getDeviceInfo: () => unknown;
 }
 
