@@ -18,10 +18,7 @@
       };
 
       try {
-        bridge.setItem({
-          key: "profile",
-          data: { name: "Alice" }
-        });
+        bridge.setItem("profile", { name: "Alice" });
         log("setItem sent");
 
         const info = bridge.getItem("profile");

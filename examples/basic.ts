@@ -1,10 +1,7 @@
 import bridge from "@jonce/emdc-bridge";
 
 // Set item
-bridge.setItem({
-  key: "profile",
-  data: { name: "Alice" }
-});
+bridge.setItem("profile", { name: "Alice" });
 
 // Get item by key
 const info = bridge.getItem("profile");

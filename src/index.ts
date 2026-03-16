@@ -158,8 +158,8 @@ export class EmdcBridgeCore {
     });
   }
 
-  setItem(payload: { key: string; data: unknown }) {
-    return this.callAndroid("setItem", payload);
+  setItem(key: string, data: unknown) {
+    return this.callAndroid("setItem", { key, data });
   }
 
   getItem(key: string) {
