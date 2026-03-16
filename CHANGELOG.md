@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.7](https://github.com/zebaitech/emdc-bridge/compare/v0.1.6...v0.1.7) (2026-03-16)
+
+
+### Bug Fixes
+
+* export types in package.json ([4a13836](https://github.com/zebaitech/emdc-bridge/commit/4a13836761d3152a7177c02ab3bdab70b65f0f4d))
+
 ### [0.1.6](https://github.com/zebaitech/emdc-bridge/compare/v0.1.5...v0.1.6) (2026-03-16)
 
 
