@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.5](https://github.com/zebaitech/emdc-bridge/compare/v0.1.4...v0.1.5) (2026-03-16)
+
+
+### Bug Fixes
+
+* relax android method typings ([e3d2f9d](https://github.com/zebaitech/emdc-bridge/commit/e3d2f9dbd9239201997ac49338c181784d3b8ee5))
+
 ### [0.1.4](https://github.com/zebaitech/emdc-bridge/compare/v0.1.3...v0.1.4) (2026-03-16)
 
 

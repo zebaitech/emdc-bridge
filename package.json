@@ -1,6 +1,6 @@
 {
   "name": "@jonce/emdc-bridge",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "EmdcBridge JS wrapper for Web-Android communication",
   "type": "module",
   "main": "dist/index.cjs",
