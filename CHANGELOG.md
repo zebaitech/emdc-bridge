@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.8](https://github.com/zebaitech/emdc-bridge/compare/v0.1.7...v0.1.8) (2026-03-16)
+
+
+### Bug Fixes
+
+* setItem/getItem/clearItem use separate args ([e17e361](https://github.com/zebaitech/emdc-bridge/commit/e17e361d1991b8b1ed2d2f72cc54596806534aaa))
+
 ### [0.1.7](https://github.com/zebaitech/emdc-bridge/compare/v0.1.6...v0.1.7) (2026-03-16)
 
 
