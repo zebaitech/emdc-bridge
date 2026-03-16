@@ -108,8 +108,23 @@ export class EmdcBridgeCore {
       ? JSON.stringify(payload)
       : payload;
 
-    const result = window.EmdcBridge?.[methodName](body as string | AnyObject | undefined);
-    return safeParseJSON(result);
+    try {
+      if (payload === undefined) {
+        const result = (window.EmdcBridge as EmdcBridgeAndroid)[methodName]();
+        return safeParseJSON(result);
+      }
+
+      const result = (window.EmdcBridge as EmdcBridgeAndroid)[methodName](body as string | AnyObject | undefined);
+      return safeParseJSON(result);
+    } catch (err) {
+      // Some Android bridges expose only a String-arg signature. If we called
+      // a no-arg method and it failed, retry with an empty JSON payload.
+      if (payload === undefined && this.serialize) {
+        const result = (window.EmdcBridge as EmdcBridgeAndroid)[methodName](JSON.stringify({}));
+        return safeParseJSON(result);
+      }
+      throw err as Error;
+    }
   }
 
   request(methodName: keyof EmdcBridgeAndroid, payload: unknown, options: { timeout?: number } = {}) {
