@@ -47,6 +47,7 @@ bridge.request("getInfo", { type: "getInfo", data: {} })
 - `bridge.saveInfo(payload)`
 - `bridge.getInfo()`
 - `bridge.getDeviceInfo()`
+- `bridge.isAndroidAvailable()`
 - `bridge.request(methodName, payload, { timeout })`
 - `bridge.on(type, handler)`
 - `bridge.once(type, handler)`
@@ -64,6 +65,10 @@ bridge.request("getInfo", { type: "getInfo", data: {} })
 ## Notes
 
 - Payloads are JSON-stringified before sending to Android by default. If your Android bridge expects raw objects, create your own instance with `serialize: false`.
+
+## Environment Check
+
+Use `bridge.isAndroidAvailable()` to check whether the Android bridge has been injected before calling Android methods.
 
 ```ts
 import { EmdcBridgeCore } from "@jonce/emdc-bridge";
