@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.3](https://github.com/zebaitech/emdc-bridge/compare/v0.1.2...v0.1.3) (2026-03-16)
+
+
+### Features
+
+* rename saveInfo to setInfo ([cba824b](https://github.com/zebaitech/emdc-bridge/commit/cba824b4cdcac1ca6c1c4a7b86db5082a9d8ff1f))
+
 ### [0.1.2](https://github.com/zebaitech/emdc-bridge/compare/v0.1.1...v0.1.2) (2026-03-16)
 
 
