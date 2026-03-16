@@ -18,9 +18,9 @@ export interface BridgeOptions {
 export type BridgeHandler = (data: unknown, raw: BridgePayload) => void;
 
 interface EmdcBridgeAndroid {
-  setItem: (payload?: string | AnyObject) => unknown;
-  getItem: (payload?: string | AnyObject) => unknown;
-  clearItem: (payload?: string | AnyObject) => unknown;
+  setItem: (...args: unknown[]) => unknown;
+  getItem: (...args: unknown[]) => unknown;
+  clearItem: (...args: unknown[]) => unknown;
   getDeviceInfo: () => unknown;
 }
 
@@ -128,6 +128,19 @@ export class EmdcBridgeCore {
     }
   }
 
+  private callAndroidArgs(methodName: keyof EmdcBridgeAndroid, args: unknown[]) {
+    if (!this.isAndroidAvailable() || typeof window.EmdcBridge?.[methodName] !== "function") {
+      throw new Error(`Android bridge method not available: ${String(methodName)}`);
+    }
+
+    const normalizedArgs = this.serialize
+      ? args.map((arg) => (arg !== null && typeof arg === "object" ? JSON.stringify(arg) : arg))
+      : args;
+
+    const result = (window.EmdcBridge as EmdcBridgeAndroid)[methodName](...normalizedArgs);
+    return safeParseJSON(result);
+  }
+
   request(methodName: keyof EmdcBridgeAndroid, payload: unknown, options: { timeout?: number } = {}) {
     const requestId = `req_${Date.now()}_${Math.random().toString(16).slice(2)}`;
     const timeoutMs = Number.isFinite(options.timeout) ? (options.timeout as number) : this.timeout;
@@ -159,15 +172,15 @@ export class EmdcBridgeCore {
   }
 
   setItem(key: string, data: unknown) {
-    return this.callAndroid("setItem", { key, data });
+    return this.callAndroidArgs("setItem", [key, data]);
   }
 
   getItem(key: string) {
-    return this.callAndroid("getItem", { key });
+    return this.callAndroidArgs("getItem", [key]);
   }
 
   clearItem(key: string) {
-    return this.callAndroid("clearItem", { key });
+    return this.callAndroidArgs("clearItem", [key]);
   }
 
   getDeviceInfo() {
