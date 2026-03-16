@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.4](https://github.com/zebaitech/emdc-bridge/compare/v0.1.3...v0.1.4) (2026-03-16)
+
+
+### Features
+
+* add clearItem ([f8f3db8](https://github.com/zebaitech/emdc-bridge/commit/f8f3db889d3b5bba7f6d1695dd0cfa8028a69dfb))
+* rename setInfo/getInfo to setItem/getItem ([313061c](https://github.com/zebaitech/emdc-bridge/commit/313061c114bdd3609e902ee30d2aa9aa83737b05))
+
 ### [0.1.3](https://github.com/zebaitech/emdc-bridge/compare/v0.1.2...v0.1.3) (2026-03-16)
 
 
