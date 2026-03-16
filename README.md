@@ -13,14 +13,14 @@ npm i @jonce/emdc-bridge
 ```ts
 import bridge from "@jonce/emdc-bridge";
 
-// Set info
-bridge.setInfo({
-  type: "setInfo",
+// Set item
+bridge.setItem({
+  key: "profile",
   data: { name: "Alice" }
 });
 
-// Get info
-const info = bridge.getInfo();
+// Get item by key
+const info = bridge.getItem("profile");
 
 // Device info
 const device = bridge.getDeviceInfo();
@@ -37,15 +37,15 @@ bridge.on("deviceEvent", (data) => {
 ## Advanced: request/response (optional)
 
 ```ts
-bridge.request("getInfo", { type: "getInfo", data: {} })
+bridge.request("getItem", { type: "getItem", data: { key: "profile" } })
   .then((data) => console.log(data))
   .catch(console.error);
 ```
 
 ## API
 
-- `bridge.setInfo(payload)`
-- `bridge.getInfo()`
+- `bridge.setItem({ key, data })`
+- `bridge.getItem(key)`
 - `bridge.getDeviceInfo()`
 - `bridge.isAndroidAvailable()`
 - `bridge.request(methodName, payload, { timeout })`
@@ -57,7 +57,7 @@ bridge.request("getInfo", { type: "getInfo", data: {} })
 
 ```json
 {
-  "type": "string",
+  "key": "string",
   "data": {}
 }
 ```

@@ -18,8 +18,8 @@ export interface BridgeOptions {
 export type BridgeHandler = (data: unknown, raw: BridgePayload) => void;
 
 interface EmdcBridgeAndroid {
-  setInfo: (payload?: string | AnyObject) => unknown;
-  getInfo: () => unknown;
+  setItem: (payload?: string | AnyObject) => unknown;
+  getItem: (payload?: string | AnyObject) => unknown;
   getDeviceInfo: () => unknown;
 }
 
@@ -99,7 +99,7 @@ export class EmdcBridgeCore {
     return typeof window !== "undefined" && Boolean(window.EmdcBridge);
   }
 
-  private callAndroid(methodName: keyof EmdcBridgeAndroid, payload?: BridgePayload) {
+  private callAndroid(methodName: keyof EmdcBridgeAndroid, payload?: unknown) {
     if (!this.isAndroidAvailable() || typeof window.EmdcBridge?.[methodName] !== "function") {
       throw new Error(`Android bridge method not available: ${String(methodName)}`);
     }
@@ -157,13 +157,12 @@ export class EmdcBridgeCore {
     });
   }
 
-  setInfo(payload: unknown) {
-    const normalized = normalizePayload(payload, "setInfo");
-    return this.callAndroid("setInfo", normalized);
+  setItem(payload: { key: string; data: unknown }) {
+    return this.callAndroid("setItem", payload);
   }
 
-  getInfo() {
-    return this.callAndroid("getInfo");
+  getItem(key: string) {
+    return this.callAndroid("getItem", { key });
   }
 
   getDeviceInfo() {

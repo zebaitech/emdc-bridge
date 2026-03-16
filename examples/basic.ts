@@ -1,13 +1,13 @@
 import bridge from "@jonce/emdc-bridge";
 
-// Set info
-bridge.setInfo({
-  type: "setInfo",
+// Set item
+bridge.setItem({
+  key: "profile",
   data: { name: "Alice" }
 });
 
-// Get info
-const info = bridge.getInfo();
+// Get item by key
+const info = bridge.getItem("profile");
 console.log("getInfo", info);
 
 // Device info

@@ -18,14 +18,14 @@
       };
 
       try {
-        bridge.setInfo({
-          type: "setInfo",
+        bridge.setItem({
+          key: "profile",
           data: { name: "Alice" }
         });
-        log("setInfo sent");
+        log("setItem sent");
 
-        const info = bridge.getInfo();
-        log("getInfo: " + JSON.stringify(info));
+        const info = bridge.getItem("profile");
+        log("getItem: " + JSON.stringify(info));
 
         const device = bridge.getDeviceInfo();
         log("getDeviceInfo: " + JSON.stringify(device));
