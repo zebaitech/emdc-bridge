@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.6](https://github.com/zebaitech/emdc-bridge/compare/v0.1.5...v0.1.6) (2026-03-16)
+
+
+### Features
+
+* setItem accept key and data args ([8bd49ea](https://github.com/zebaitech/emdc-bridge/commit/8bd49eae9a7e3e966b476d6cb3b733cf6e4d6c5d))
+
 ### [0.1.5](https://github.com/zebaitech/emdc-bridge/compare/v0.1.4...v0.1.5) (2026-03-16)
 
 
