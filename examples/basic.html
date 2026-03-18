@@ -27,6 +27,9 @@
         bridge.clearItem("profile");
         log("clearItem sent");
 
+        bridge.startAssistantWork();
+        log("startAssistantWork sent");
+
         const device = bridge.getDeviceInfo();
         log("getDeviceInfo: " + JSON.stringify(device));
       } catch (err) {

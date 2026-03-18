@@ -21,6 +21,7 @@ interface EmdcBridgeAndroid {
   setItem: (...args: unknown[]) => unknown;
   getItem: (...args: unknown[]) => unknown;
   clearItem: (...args: unknown[]) => unknown;
+  startAssistantWork: (...args: unknown[]) => unknown;
   getDeviceInfo: () => unknown;
 }
 
@@ -181,6 +182,10 @@ export class EmdcBridgeCore {
 
   clearItem(key: string) {
     return this.callAndroidArgs("clearItem", [key]);
+  }
+
+  startAssistantWork() {
+    return this.callAndroidArgs("startAssistantWork", []);
   }
 
   getDeviceInfo() {

@@ -22,6 +22,9 @@ const info = bridge.getItem("profile");
 // Clear item by key
 bridge.clearItem("profile");
 
+// Start assistant work
+bridge.startAssistantWork();
+
 // Device info
 const device = bridge.getDeviceInfo();
 
@@ -47,6 +50,7 @@ bridge.request("getItem", { type: "getItem", data: { key: "profile" } })
 - `bridge.setItem(key, data)`
 - `bridge.getItem(key)`
 - `bridge.clearItem(key)`
+- `bridge.startAssistantWork()`
 - `bridge.getDeviceInfo()`
 - `bridge.isAndroidAvailable()`
 - `bridge.request(methodName, payload, { timeout })`

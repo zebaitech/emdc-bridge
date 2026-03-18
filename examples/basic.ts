@@ -10,6 +10,9 @@ console.log("getInfo", info);
 // Clear item by key
 bridge.clearItem("profile");
 
+// Start assistant work
+bridge.startAssistantWork();
+
 // Device info
 const device = bridge.getDeviceInfo();
 console.log("getDeviceInfo", device);
