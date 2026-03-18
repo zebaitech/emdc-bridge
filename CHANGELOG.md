@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.9](https://github.com/zebaitech/emdc-bridge/compare/v0.1.8...v0.1.9) (2026-03-18)
+
+
+### Features
+
+* add startAssistantWork ([696d0fc](https://github.com/zebaitech/emdc-bridge/commit/696d0fca159923ebfe62c5b8f34ab2489887b64d))
+
 ### [0.1.8](https://github.com/zebaitech/emdc-bridge/compare/v0.1.7...v0.1.8) (2026-03-16)
 
 
