@@ -22,6 +22,7 @@ interface EmdcBridgeAndroid {
   getItem: (...args: unknown[]) => unknown;
   clearItem: (...args: unknown[]) => unknown;
   startAssistantWork: (...args: unknown[]) => unknown;
+  playVideo: (...args: unknown[]) => unknown;
   getDeviceInfo: () => unknown;
 }
 
@@ -186,6 +187,10 @@ export class EmdcBridgeCore {
 
   startAssistantWork() {
     return this.callAndroidArgs("startAssistantWork", []);
+  }
+
+  playVideo(fileName: string) {
+    return this.callAndroidArgs("playVideo", [fileName]);
   }
 
   getDeviceInfo() {

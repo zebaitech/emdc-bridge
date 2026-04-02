@@ -25,6 +25,9 @@ bridge.clearItem("profile");
 // Start assistant work
 bridge.startAssistantWork();
 
+// Play video
+bridge.playVideo("intro.mp4");
+
 // Device info
 const device = bridge.getDeviceInfo();
 
@@ -51,6 +54,7 @@ bridge.request("getItem", { type: "getItem", data: { key: "profile" } })
 - `bridge.getItem(key)`
 - `bridge.clearItem(key)`
 - `bridge.startAssistantWork()`
+- `bridge.playVideo(fileName)`
 - `bridge.getDeviceInfo()`
 - `bridge.isAndroidAvailable()`
 - `bridge.request(methodName, payload, { timeout })`
