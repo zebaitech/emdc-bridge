@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.12](https://github.com/zebaitech/emdc-bridge/compare/v0.1.11...v0.1.12) (2026-05-19)
+
+
+### Features
+
+* add phone panel bridge method ([a4660f0](https://github.com/zebaitech/emdc-bridge/commit/a4660f0473f715a55ecafdc3120d61c2068b426a))
+
 ### [0.1.11](https://github.com/zebaitech/emdc-bridge/compare/v0.1.10...v0.1.11) (2026-04-24)
 
 ### [0.1.9](https://github.com/zebaitech/emdc-bridge/compare/v0.1.8...v0.1.9) (2026-03-18)
