@@ -22,8 +22,11 @@ interface EmdcBridgeAndroid {
   getItem: (...args: unknown[]) => unknown;
   clearItem: (...args: unknown[]) => unknown;
   startAssistantWork: (...args: unknown[]) => unknown;
+  openCalibrationActivity: (...args: unknown[]) => unknown;
+  showPhonePanel: (...args: unknown[]) => unknown;
   playVideo: (...args: unknown[]) => unknown;
   getDeviceInfo: () => unknown;
+  onMouseEvent: (...args: unknown[]) => unknown;
 }
 
 declare global {
@@ -189,6 +192,14 @@ export class EmdcBridgeCore {
     return this.callAndroidArgs("startAssistantWork", []);
   }
 
+  openCalibrationActivity() {
+    return this.callAndroidArgs("openCalibrationActivity", []);
+  }
+
+  showPhonePanel(visible: boolean) {
+    return this.callAndroidArgs("showPhonePanel", [visible]);
+  }
+
   playVideo(fileName: string) {
     return this.callAndroidArgs("playVideo", [fileName]);
   }
@@ -196,7 +207,9 @@ export class EmdcBridgeCore {
   getDeviceInfo() {
     return this.callAndroid("getDeviceInfo");
   }
-
+  onMouseEvent(type: string, data: object) {
+    return this.callAndroidArgs("onMouseEvent", [type, data]);
+  }
   on(type: string, handler: BridgeHandler) {
     if (!this.listeners.has(type)) {
       this.listeners.set(type, new Set());

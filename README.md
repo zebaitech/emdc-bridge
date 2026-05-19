@@ -25,6 +25,13 @@ bridge.clearItem("profile");
 // Start assistant work
 bridge.startAssistantWork();
 
+// Open calibration page
+bridge.openCalibrationActivity();
+
+// Show/hide phone panel
+bridge.showPhonePanel(true);
+bridge.showPhonePanel(false);
+
 // Play video
 bridge.playVideo("intro.mp4");
 
@@ -54,6 +61,8 @@ bridge.request("getItem", { type: "getItem", data: { key: "profile" } })
 - `bridge.getItem(key)`
 - `bridge.clearItem(key)`
 - `bridge.startAssistantWork()`
+- `bridge.openCalibrationActivity()`
+- `bridge.showPhonePanel(visible)`
 - `bridge.playVideo(fileName)`
 - `bridge.getDeviceInfo()`
 - `bridge.isAndroidAvailable()`
