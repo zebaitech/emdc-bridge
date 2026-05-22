@@ -25,6 +25,9 @@ interface EmdcBridgeAndroid {
   openCalibrationActivity: (...args: unknown[]) => unknown;
   showPhonePanel: (...args: unknown[]) => unknown;
   playVideo: (...args: unknown[]) => unknown;
+  refreshPage: (...args: unknown[]) => unknown;
+  setVoiceEnabled: (...args: unknown[]) => unknown;
+  isVoiceEnabled: (...args: unknown[]) => unknown;
   getDeviceInfo: () => unknown;
   onMouseEvent: (...args: unknown[]) => unknown;
 }
@@ -202,6 +205,18 @@ export class EmdcBridgeCore {
 
   playVideo(fileName: string) {
     return this.callAndroidArgs("playVideo", [fileName]);
+  }
+
+  refreshPage() {
+    return this.callAndroid("refreshPage");
+  }
+
+  setVoiceEnabled(enabled: boolean = false) {
+    return this.callAndroidArgs("setVoiceEnabled", [enabled]);
+  }
+
+  isVoiceEnabled(): boolean {
+    return Boolean(this.callAndroid("isVoiceEnabled"));
   }
 
   getDeviceInfo() {

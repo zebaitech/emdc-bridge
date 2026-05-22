@@ -35,6 +35,14 @@ bridge.showPhonePanel(false);
 // Play video
 bridge.playVideo("intro.mp4");
 
+// Refresh current page
+bridge.refreshPage();
+
+// Voice switch
+bridge.setVoiceEnabled();
+bridge.setVoiceEnabled(true);
+const voiceEnabled = bridge.isVoiceEnabled();
+
 // Device info
 const device = bridge.getDeviceInfo();
 
@@ -64,6 +72,9 @@ bridge.request("getItem", { type: "getItem", data: { key: "profile" } })
 - `bridge.openCalibrationActivity()`
 - `bridge.showPhonePanel(visible)`
 - `bridge.playVideo(fileName)`
+- `bridge.refreshPage()`
+- `bridge.setVoiceEnabled(enabled = false)`
+- `bridge.isVoiceEnabled()`
 - `bridge.getDeviceInfo()`
 - `bridge.isAndroidAvailable()`
 - `bridge.request(methodName, payload, { timeout })`
