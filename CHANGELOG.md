@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.14](https://github.com/zebaitech/emdc-bridge/compare/v0.1.13...v0.1.14) (2026-06-08)
+
+
+### Features
+
+* **bridge:** add new voice control and page refresh methods ([fcb2352](https://github.com/zebaitech/emdc-bridge/commit/fcb2352abb335a11ef76ee6e0c559efe30c567b5))
+* **bridge:** add setToast method to display toast message ([165e46b](https://github.com/zebaitech/emdc-bridge/commit/165e46b83688eb97c8eef9103d5da5adb4143497))
+
 ### [0.1.13](https://github.com/zebaitech/emdc-bridge/compare/v0.1.12...v0.1.13) (2026-05-22)
 
 ### [0.1.12](https://github.com/zebaitech/emdc-bridge/compare/v0.1.11...v0.1.12) (2026-05-19)
