@@ -26,6 +26,7 @@ interface EmdcBridgeAndroid {
   showPhonePanel: (...args: unknown[]) => unknown;
   playVideo: (...args: unknown[]) => unknown;
   refreshPage: (...args: unknown[]) => unknown;
+  setToast: (...args: unknown[]) => unknown;
   setVoiceEnabled: (...args: unknown[]) => unknown;
   isVoiceEnabled: (...args: unknown[]) => unknown;
   getDeviceInfo: () => unknown;
@@ -209,6 +210,10 @@ export class EmdcBridgeCore {
 
   refreshPage() {
     return this.callAndroid("refreshPage");
+  }
+
+  setToast(logs: string) {
+    return this.callAndroidArgs("setToast", [logs]);
   }
 
   setVoiceEnabled(enabled: boolean = false) {

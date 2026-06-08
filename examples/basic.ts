@@ -13,6 +13,9 @@ bridge.clearItem("profile");
 // Start assistant work
 bridge.startAssistantWork();
 
+// Show toast
+bridge.setToast("操作成功");
+
 // Device info
 const device = bridge.getDeviceInfo();
 console.log("getDeviceInfo", device);
