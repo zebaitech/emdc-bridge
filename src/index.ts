@@ -16,6 +16,7 @@ export interface BridgeOptions {
 }
 
 export type BridgeHandler = (data: unknown, raw: BridgePayload) => void;
+export type ToastLevel = "info" | "warning" | "error" | "success";
 
 interface EmdcBridgeAndroid {
   setItem: (...args: unknown[]) => unknown;
@@ -212,8 +213,8 @@ export class EmdcBridgeCore {
     return this.callAndroid("refreshPage");
   }
 
-  setToast(logs: string) {
-    return this.callAndroidArgs("setToast", [logs]);
+  setToast(level: ToastLevel, logs: string) {
+    return this.callAndroidArgs("setToast", [level, logs]);
   }
 
   setVoiceEnabled(enabled: boolean = false) {

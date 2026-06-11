@@ -39,7 +39,7 @@ bridge.playVideo("intro.mp4");
 bridge.refreshPage();
 
 // Show toast
-bridge.setToast("操作成功");
+bridge.setToast("success", "操作成功");
 
 // Voice switch
 bridge.setVoiceEnabled();
@@ -76,7 +76,7 @@ bridge.request("getItem", { type: "getItem", data: { key: "profile" } })
 - `bridge.showPhonePanel(visible)`
 - `bridge.playVideo(fileName)`
 - `bridge.refreshPage()`
-- `bridge.setToast(logs)`
+- `bridge.setToast(level, logs)` - `level`: `"info" | "warning" | "error" | "success"`
 - `bridge.setVoiceEnabled(enabled = false)`
 - `bridge.isVoiceEnabled()`
 - `bridge.getDeviceInfo()`
