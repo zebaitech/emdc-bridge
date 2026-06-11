@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.15](https://github.com/zebaitech/emdc-bridge/compare/v0.1.14...v0.1.15) (2026-06-11)
+
+
+### Features
+
+* **bridge:** update setToast method to accept level parameter ([9d56d2c](https://github.com/zebaitech/emdc-bridge/commit/9d56d2cd5dca887850aac25c0f89066a2d020605))
+
 ### [0.1.14](https://github.com/zebaitech/emdc-bridge/compare/v0.1.13...v0.1.14) (2026-06-08)
 
 
